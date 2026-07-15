@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-game-bg: #0a0a2e;
+  --color-game-bg-light: #12123a;
+  --color-game-gold: #ffd700;
+  --color-game-gold-dark: #b8960f;
+  --color-game-blue: #2563eb;
+  --color-game-blue-dark: #1d4ed8;
+  --color-game-red: #dc2626;
+  --color-game-green: #16a34a;
+  --color-game-amber: #f59e0b;
+  --color-game-purple: #7c3aed;
+  --color-game-cyan: #06b6d4;
+  --color-game-surface: rgba(15, 23, 42, 0.8);
+  --color-game-surface-light: rgba(30, 41, 59, 0.9);
+
+  --font-game: 'Georgia', 'Times New Roman', serif;
+  --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes timer-shrink {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+@keyframes buzz-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes stars {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes select-flash {
+  0% { box-shadow: 0 0 0px rgba(22, 163, 74, 0); transform: scale(1); }
+  20% { box-shadow: 0 0 30px rgba(22, 163, 74, 0.6); transform: scale(1.05); }
+  60% { box-shadow: 0 0 20px rgba(22, 163, 74, 0.4); transform: scale(1.02); }
+  100% { box-shadow: 0 0 0px rgba(22, 163, 74, 0); transform: scale(1); }
+}
+
+.animate-select-flash {
+  animation: select-flash 1.2s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-timer {
+  animation: timer-shrink 3s linear forwards;
+}
+
+.animate-buzz-pulse {
+  animation: buzz-pulse 0.8s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 2s linear infinite;
+}
+
+body {
+  margin: 0;
+  background: #0a0a2e;
+  color: #e2e8f0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+}
+
+#root {
+  min-height: 100dvh;
+  min-height: 100vh;
+}
